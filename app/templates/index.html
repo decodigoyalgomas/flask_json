@@ -33,7 +33,7 @@
 				<h4>Item Random {{ loop.index }}</h4>
 				<ul>
 				{% for key, value in item.pprint().items() %}
-					<li>{{key}} - {{value}}</li>
+					<li>{{key}}: {{value}}</li>
 				{% endfor %}
 				</ul>
 			{% endfor %}

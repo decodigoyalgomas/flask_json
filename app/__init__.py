@@ -1,5 +1,6 @@
 # libraries import
-from flask import Flask, render_template, redirect, url_for, request 
+import json
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_zurb_foundation import Foundation
 from sqlalchemy_wrapper import SQLAlchemy
 
@@ -44,5 +45,6 @@ def save():
 	db.session.commit()
 	
 
-	return redirect(url_for("index"))
+
+	return jsonify(received_data)
 

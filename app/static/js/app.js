@@ -1,6 +1,16 @@
 $(document).ready(function(){
 
+	// función básica de manejo de data
+	function manageResponse(response, itemToClean, itemsContainer){
+		itemToClean.empty();
 
+		itemsContainer.append("<h4> Item Random " + itemsContainer.find("h4").length + "</h4>"+
+			"<ul>"+
+			"<li>" +response.responseText+ " </li>"+
+			"</ul>"
+		);
+		console.log(response.responseJSON);
+	}
 	// Creando Fields para el formulario
 	$(".add-button").on("click", function(){
 
@@ -37,12 +47,15 @@ $(document).ready(function(){
 			data: JSON.stringify(data),
 			contentType: "application/json",
 			complete: function(resp){
-				console.log("Message Delivered")
+				console.log(resp)
+				manageResponse(resp, $("#form-container"),$(".results .row") )
+
 			}
 		});
 		
 
 	});
+
 
 
 });
