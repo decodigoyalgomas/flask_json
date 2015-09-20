@@ -6,9 +6,12 @@ $(document).ready(function(){
 
 		itemsContainer.append("<h4> Item Random " + itemsContainer.find("h4").length + "</h4>"+
 			"<ul>"+
-			"<li>" +response.responseText+ " </li>"+
+			"<li>" + Object.keys(response.responseJSON.data) + " </li>"+
 			"</ul>"
 		);
+		$("#status").append(response.responseJSON["message"])
+		$("#status").addClass(response.responseJSON.status).show();
+
 		console.log(response.responseJSON);
 	}
 	// Creando Fields para el formulario
