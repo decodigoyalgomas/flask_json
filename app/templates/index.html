@@ -28,10 +28,17 @@
 	</section>
 
 	<section class="results small-12 medium-6 columns">
-		{% for item in data %}
-		{{data}}
-
-		{% endfor %}
+		<div class="row">
+			{% for item in data %}
+				<h4>Item Random {{ loop.index }}</h4>
+				<ul>
+				{% for key, value in item.pprint().items() %}
+					<li>{{key}} - {{value}}</li>
+				{% endfor %}
+				</ul>
+			{% endfor %}
+				
+		</div>
 		
 	</section>
 		
