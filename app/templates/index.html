@@ -1,0 +1,36 @@
+{% extends "foundation/base.html" %}
+
+
+{% block footer_scripts %}
+	{{super()}}
+	<script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+{% endblock %}
+{% block content %}
+
+<div class="row">
+	<h1>Random data app</h1>
+</div>
+
+<div class="row">
+	<section class="small-12 columns">
+		<h3>¿Cuántos inputs requieres?</h3>
+		<input id="quantity" class="quantity" type="number" value="1">
+		<button class="add-button">agregar</button>
+	</section>
+</div>
+<div class="row">
+	<section  class=" small-12 medium-6 columns">
+	<div id="form-container">
+		
+	</div>	
+	<button id="send-data">enviar</button>
+	</section>
+
+	<section class="results small-12 medium-6 columns">
+		
+	</section>
+
+</div>
+
+{% endblock %}
